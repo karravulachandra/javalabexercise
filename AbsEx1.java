@@ -28,7 +28,7 @@ class Cbse extends Student
 	}
 	
 }
-public class AbsEx {
+public class AbsEx1 {
 
 	public static void main(String[] args) {
 		Cbse on=new Cbse("abcd");
