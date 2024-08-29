@@ -1,47 +1,34 @@
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Scanner;
-import java.util.Set;
+package day1;
+	import java.util.Arrays;
+	import java.util.HashSet;
+	import java.util.Set;
 
-public class RemoveDuplicates {
+	public class RemoveDuplicates {
+	    public static void main(String[] args) {
+	        // Sample array with duplicates
+	        int[] numbers = {1, 2, 3, 4, 5, 2, 3, 6, 7, 4};
 
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+	        // Remove duplicates
+	        int[] uniqueNumbers = removeDuplicates(numbers);
 
-        // Prompt the user to enter the size of the array
-        System.out.print("Enter the number of elements in the array: ");
-        int size = scanner.nextInt();
+	        // Print the result
+	        System.out.println("Array without duplicates: " + Arrays.toString(uniqueNumbers));
+	    }
 
-        // Create an array of the given size
-        int[] array = new int[size];
+	    public static int[] removeDuplicates(int[] array) {
+	        Set<Integer> uniqueElements = new HashSet<>();
+	        for (int num : array) {
+	            uniqueElements.add(num);
+	        }
 
-        // Prompt the user to enter the elements of the array
-        System.out.println("Enter the elements of the array:");
-        for (int i = 0; i < size; i++) {
-            array[i] = scanner.nextInt();
-        }
+	        int[] result = new int[uniqueElements.size()];
+	        int index = 0;
+	        for (int num : uniqueElements) {
+	            result[index++] = num;
+	        }
 
-        // Remove duplicates from the array
-        int[] uniqueArray = removeDuplicates(array);
+	        return result;
+	    }
+	}
 
-        // Display the array without duplicates
-        System.out.println("Array without duplicates: " + Arrays.toString(uniqueArray));
 
-        scanner.close();
-    }
-
-    public static int[] removeDuplicates(int[] array) {
-        Set<Integer> set = new HashSet<>();
-        for (int value : array) {
-            set.add(value);
-        }
-
-        int[] uniqueArray = new int[set.size()];
-        int index = 0;
-        for (int value : set) {
-            uniqueArray[index++] = value;
-        }
-
-        return uniqueArray;
-    }
-}

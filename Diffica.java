@@ -1,4 +1,4 @@
-package collections;
+package javalabexercise;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Collections;

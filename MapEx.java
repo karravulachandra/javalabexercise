@@ -1,4 +1,4 @@
-package collections;
+package javalabexercise;
 import java.util.*;
 public class MapEx {
 

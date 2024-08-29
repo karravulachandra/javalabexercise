@@ -19,16 +19,16 @@ import java.util.Scanner;
 	    }
 
 	    public static void main(String[] args) {
-	        Scanner scanner = new Scanner(System.in);
+	        try (Scanner scanner = new Scanner(System.in)) {
+				System.out.print("Enter a number to calculate its factorial: ");
+				int number = scanner.nextInt();
 
-	        System.out.print("Enter a number to calculate its factorial: ");
-	        int number = scanner.nextInt();
+				long iterativeResult = factorialIterative(number);
+				System.out.println("Factorial of " + number + " (Iterative): " + iterativeResult);
 
-	        long iterativeResult = factorialIterative(number);
-	        System.out.println("Factorial of " + number + " (Iterative): " + iterativeResult);
-
-	        long recursiveResult = factorialRecursive(number);
-	        System.out.println("Factorial of " + number + " (Recursive): " + recursiveResult);
+				long recursiveResult = factorialRecursive(number);
+				System.out.println("Factorial of " + number + " (Recursive): " + recursiveResult);
+			}
 	    }
 	}
 

@@ -1,49 +1,45 @@
+package day1;
 import java.util.Scanner;
 
-public class VoterEligibility {
-    private int birthYear;
-    private int age;
-    
-    // Constructor to initialize birthYear and calculate age
-    public VoterEligibility(int birthYear) {
-        this.birthYear = birthYear;
-        this.age = calculateAge(birthYear);
-    }
-    
-    // Method to calculate age
-    private int calculateAge(int birthYear) {
-        int currentYear = java.util.Calendar.getInstance().get(java.util.Calendar.YEAR);
-        return currentYear - birthYear;
-    }
-    
-    // Method to check voting eligibility
-    public boolean isEligibleToVote() {
-        return this.age >= 18;
-    }
-    
-    // Method to display age and eligibility status
-    public void displayInfo() {
-        System.out.println("Your age is: " + this.age);
-        if (isEligibleToVote()) {
-            System.out.println("You are eligible to vote.");
-        } else {
-            System.out.println("You are not eligible to vote.");
-        }
-    }
+	public class VoterEligibility {
+	    private int birthYear;
+	    private int currentYear;
+	    private int age;
 
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+	    public VoterEligibility(int birthYear) {
+	        this.birthYear = birthYear;
+	        this.currentYear = 2024; // You can dynamically fetch the current year using the Calendar class
+	        this.age = calculateAge();
+	    }
 
-        // Prompt the user to enter their birth year
-        System.out.print("Enter your birth year: ");
-        int birthYear = scanner.nextInt();
+	    private int calculateAge() {
+	        return this.currentYear - this.birthYear;
+	    }
 
-        // Create an instance of VoterEligibility
-        VoterEligibility voter = new VoterEligibility(birthYear);
+	    public String checkEligibility() {
+	        if (this.age >= 18) {
+	            return "You are eligible to vote.";
+	        } else {
+	            return "You are not eligible to vote.";
+	        }
+	    }
 
-        // Display age and eligibility status
-        voter.displayInfo();
+	    public int getAge() {
+	        return this.age;
+	    }
 
-        scanner.close();
-    }
-}
+	    public static void main(String[] args) {
+	        Scanner scanner = new Scanner(System.in);
+	        System.out.print("Enter your birth year: ");
+	        int birthYear = scanner.nextInt();
+
+	        VoterEligibility voter = new VoterEligibility(birthYear);
+
+	        System.out.println("Your age is: " + voter.getAge());
+	        System.out.println(voter.checkEligibility());
+
+	        scanner.close();
+	    }
+	}
+
+

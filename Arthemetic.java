@@ -27,4 +27,4 @@ public class Arthemetic {
 	        System.out.println("Remainder: " + remainder);
 	    }
 	}
-}
+

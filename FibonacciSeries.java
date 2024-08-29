@@ -28,11 +28,11 @@ import java.util.Scanner;
 	    }
 
 	    public static void main(String[] args) {
-	        Scanner scanner = new Scanner(System.in);
+	        try (Scanner scanner = new Scanner(System.in)) {
+				System.out.print("Enter the number of terms: ");
+				int numberOfTerms = scanner.nextInt();
 
-	        System.out.print("Enter the number of terms: ");
-	        int numberOfTerms = scanner.nextInt();
-
-	        generateFibonacci(numberOfTerms);
+				generateFibonacci(numberOfTerms);
+			}
 	    }
 	}
