@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hibernate-configuration>
+
+
+<session-factory>
+
+<property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+
+<property name="connection.url">jdbc:mysql://localhost/fjwp</property>
+
+<property name="dialect">org.hibernate.dialect.MySQL8Dialect</property>
+
+<property name="connection.username">root</property>
+
+<property name="connection.password">sushma@vadla#276</property>
+
+<property name="show_sql">true</property>
+
+<property name="hbm2ddl.auto">update</property>
+
+<property name="hibernate.current_session_context_class">thread</property>
+
+<mapping class="com.fjwp.jobportalsys.entity.UserTypes"/>
+
+<mapping class="com.fjwp.jobportalsys.entity.Users"/>
+
+<mapping class="com.fjwp.jobportalsys.entity.JobSeekers"/>
+
+<mapping class="com.fjwp.jobportalsys.entity.JobProviders"/>
+
+<mapping class="com.fjwp.jobportalsys.entity.Educations"/>
+
+<mapping class="com.fjwp.jobportalsys.entity.Applications"/>
+
+<mapping class="com.fjwp.jobportalsys.entity.Jobs"/>
+
+<mapping class="com.fjwp.jobportalsys.entity.Companies"/>
+
+
+
+</session-factory>
+
+</hibernate-configuration>
